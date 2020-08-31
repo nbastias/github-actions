@@ -1,0 +1,14 @@
+name: env test
+on:
+  push:
+    branches: environ
+env:
+  REF: ${{ github.ref }}
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: REF as var
+      run: |
+          echo "REF=$REF"
+          echo "REF=${{ github.ref }}"
